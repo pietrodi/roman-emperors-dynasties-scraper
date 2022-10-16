@@ -1,0 +1,90 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>it.outlook.pietro.dan</groupId>
+  <artifactId>roman-emperors-dynasties-scraper</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+  
+  <dependencies>
+  	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+	<dependency>
+    	<groupId>org.seleniumhq.selenium</groupId>
+    	<artifactId>selenium-java</artifactId>
+    	<version>4.3.0</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.json/json -->
+	<dependency>
+    	<groupId>org.json</groupId>
+    	<artifactId>json</artifactId>
+    	<version>20220320</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/junit/junit -->
+	<dependency>
+    	<groupId>junit</groupId>
+    	<artifactId>junit</artifactId>
+    	<version>4.13.2</version>
+    	<scope>test</scope>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+	<dependency>
+    	<groupId>io.github.bonigarcia</groupId>
+    	<artifactId>webdrivermanager</artifactId>
+    	<version>5.2.1</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.slf4j</groupId>
+    	<artifactId>slf4j-api</artifactId>
+    	<version>1.7.36</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.slf4j</groupId>
+    	<artifactId>slf4j-simple</artifactId>
+    	<version>1.7.36</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>guru.nidi</groupId>
+	    <artifactId>graphviz-java</artifactId>
+	    <version>0.18.1</version>
+	</dependency>
+  </dependencies>
+  
+  <build>
+  	<plugins>
+  		<plugin>
+    		<groupId>org.apache.maven.plugins</groupId>
+    		<artifactId>maven-assembly-plugin</artifactId>
+    		<executions>
+        		<execution>
+            		<phase>package</phase>
+            		<goals>
+                		<goal>single</goal>
+            		</goals>
+            		<configuration>
+                		<archive>
+                		<manifest>
+                    		<mainClass>
+                        		it.outlook.pietro.dan.Main
+                    		</mainClass>
+                		</manifest>
+                		</archive>
+                		<descriptorRefs>
+                    		<descriptorRef>jar-with-dependencies</descriptorRef>
+                		</descriptorRefs>
+            		</configuration>
+        		</execution>
+    		</executions>
+		</plugin>
+  	</plugins>
+  </build>
+  
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+</project>
